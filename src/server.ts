@@ -5,7 +5,7 @@ import { buildSchema } from 'type-graphql'
 import http from 'http';
 import { rootResolver } from './graphql/resolvers';
 import { connect } from 'mongoose';
-import { DEFAULT_CONFIG } from './config';
+import { CONFIG } from './config';
 
 async function startApolloServer() {
   const app = express();
@@ -16,7 +16,7 @@ async function startApolloServer() {
     emitSchemaFile: true,
   })
 
-  await connect(DEFAULT_CONFIG.MONGODB_URL).then(() => {
+  await connect(CONFIG.MONGODB_URL).then(() => {
     console.log('MongoDB Server Started!....')
   }).catch((error) => {
     console.log(error);

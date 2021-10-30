@@ -1,5 +1,5 @@
 import {Query, Resolver, Mutation, Arg} from 'type-graphql'
-import {Todo, TodoInput} from '../schemas/Todo'
+import {Todo, TodoInput} from '../schemas/Todo.schema'
 import {TodoModel} from "../../models/TodoModel";
 
 @Resolver(() => Todo)
